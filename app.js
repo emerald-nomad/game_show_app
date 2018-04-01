@@ -73,13 +73,13 @@ let checkWin = () => {
     let lettersCorrect = document.querySelectorAll('.letter.show');
     
     if (letters.length === lettersCorrect.length) {
-        overlay.className = 'win';
-        overlay.style.display = "flex";
         reset.text = "You won! Play again!"
+        overlay.className = 'win';
+        overlay.style.display = 'flex';
     } else if (missed === 5) {
         reset.text = "You lost! Try again!"
         overlay.className = 'lose';
-        overlay.style.display = "flex";
+        overlay.style.display = 'flex';
     }
 }
 
@@ -99,7 +99,7 @@ let resetGame = () => {
     missed = 0;
     const phraseArray = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(phraseArray);
-    overlay.style.display = "none";
+    overlay.style.display = 'none';
 }
 
 
