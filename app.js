@@ -41,9 +41,11 @@ let addPhraseToDisplay = arr => {
 
         if (char != ' ') {
             li.classList.add('letter');
+        } else {
+            li.classList.add('space');
         }
 
-        let text = document.createTextNode(char);
+        let text = document.createTextNode(char.toUpperCase());
 
         li.appendChild(text);
         phrase.appendChild(li);
@@ -55,7 +57,7 @@ let checkLetter = btn => {
     let match = false;
 
     letters.forEach(letter => {
-        if (btn.textContent === letter.textContent) {
+        if (btn.textContent === letter.textContent.toLowerCase()) {
             letter.classList.add('show');
             match = true;
         }
@@ -105,10 +107,3 @@ let resetGame = () => {
 
 // Adds event listener to "Start Game" button
 reset.addEventListener('click', resetGame);
-
-// let lets = document.querySelectorAll('.letter')
-// console.log(lets.length)
-
-// qwerty.forEach(row => {
-//     console.log(row.textContent);
-// })
